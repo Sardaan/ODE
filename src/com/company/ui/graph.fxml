@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="800.0" prefWidth="1200" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ui.GraphController">
+   <children>
+       <Pane prefHeight="800.0" prefWidth="300.0">
+           <children>
+               <Label layoutX="106.0" layoutY="29.0" text="Choose function" />
+               <ChoiceBox fx:id="function" layoutX="83.0" layoutY="62.0" prefWidth="150.0" />
+
+               <Label layoutX="36.0" layoutY="137.0" text="X0: " />
+               <TextField layoutX="114.0" layoutY="132.0" prefHeight="27.0" prefWidth="140.0" fx:id="x" />
+
+               <Label layoutX="36.0" layoutY="177.0" text="Y0: " />
+               <TextField fx:id="y" layoutX="114.0" layoutY="172.0" prefHeight="27.0" prefWidth="140.0" />
+
+               <Label layoutX="36.0" layoutY="218.0" text="Bound:" />
+               <TextField fx:id="bound" layoutX="114.0" layoutY="213.0" prefHeight="27.0" prefWidth="140.0" />
+
+               <Label layoutX="36.0" layoutY="262.0" text="Accuracy:" />
+               <TextField fx:id="accuracy" layoutX="114.0" layoutY="257.0" prefHeight="27.0" prefWidth="140.0" />
+
+               <Button layoutX="60.0" layoutY="341.0" mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="75.0" text="Clear" />
+               <Button layoutX="172.0" layoutY="341.0" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
+
+               <Label fx:id="error" layoutX="66.0" layoutY="464.0" textFill="red" />
+           </children>
+       </Pane>
+
+
+       <LineChart fx:id="chart" legendVisible="false" prefHeight="800.0" prefWidth="900.0">
+           <xAxis>
+               <NumberAxis autoRanging="false" lowerBound="-6.0" tickUnit="2.0" upperBound="10.0" />
+           </xAxis>
+           <yAxis>
+               <NumberAxis autoRanging="false" lowerBound="-10.0" minorTickLength="1.0" side="LEFT" tickUnit="2.0" upperBound="15.0" />
+           </yAxis>
+       </LineChart>
+
+
+   </children>
+</HBox>
